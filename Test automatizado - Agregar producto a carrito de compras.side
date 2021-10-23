@@ -1,0 +1,111 @@
+{
+  "id": "2a1b3877-2126-4695-860e-aabd39596dbc",
+  "version": "2.0",
+  "name": "Test automatizado",
+  "url": "https://www.demoblaze.com",
+  "tests": [{
+    "id": "5d084cd7-70e1-42a9-83f8-fdaa71c00386",
+    "name": "TEST - Agregar producto a carrito de compras",
+    "commands": [{
+      "id": "ac83dd93-0302-4f10-84d3-68cead5c2427",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "228393f9-dece-4ac5-a575-212fd01d002b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1299x741",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "df0a57c9-034a-4e2b-a0da-f0a9d0991f19",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Samsung galaxy s7",
+      "targets": [
+        ["linkText=Samsung galaxy s7", "linkText"],
+        ["css=.col-lg-4:nth-child(4) .hrefch", "css:finder"],
+        ["xpath=//a[contains(text(),'Samsung galaxy s7')]", "xpath:link"],
+        ["xpath=//div[@id='tbodyid']/div[4]/div/div/h4/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'prod.html?idp_=4')])[2]", "xpath:href"],
+        ["xpath=//div[4]/div/div/h4/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Samsung galaxy s7')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d80f1f05-1520-41ab-bd88-e6811ec166e5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Add to cart",
+      "targets": [
+        ["linkText=Add to cart", "linkText"],
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//a[contains(text(),'Add to cart')]", "xpath:link"],
+        ["xpath=//a[@onclick='addToCart(4)']", "xpath:attributes"],
+        ["xpath=//div[@id='tbodyid']/div[2]/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[9]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Add to cart')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b842d0f9-d288-4312-9ba6-819b06b27fa2",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Product added",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "17f4f148-526d-4b73-bac0-cda4fe1b93f0",
+      "comment": "",
+      "command": "click",
+      "target": "id=cartur",
+      "targets": [
+        ["id=cartur", "id"],
+        ["linkText=Cart", "linkText"],
+        ["css=#cartur", "css:finder"],
+        ["xpath=//a[contains(text(),'Cart')]", "xpath:link"],
+        ["xpath=//a[@id='cartur']", "xpath:attributes"],
+        ["xpath=//div[@id='navbarExample']/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'cart.html')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Cart')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "72389716-d088-4687-a911-ba3d540fa90a",
+      "comment": "",
+      "command": "storeText",
+      "target": "id=totalp",
+      "targets": [
+        ["id=totalp", "id"],
+        ["css=#totalp", "css:finder"],
+        ["xpath=//h3[@id='totalp']", "xpath:attributes"],
+        ["xpath=//div[@id='page-wrapper']/div/div[2]/div/div/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'2400')]", "xpath:innerText"]
+      ],
+      "value": "x"
+    }, {
+      "id": "67ba7ab1-9795-4014-a129-9d5388d5e4cf",
+      "comment": "",
+      "command": "echo",
+      "target": "Total = ${x}",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "db3bba5c-5855-4fe1-84e1-2a31f7f5b441",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["5d084cd7-70e1-42a9-83f8-fdaa71c00386"]
+  }],
+  "urls": ["https://www.demoblaze.com/"],
+  "plugins": []
+}
